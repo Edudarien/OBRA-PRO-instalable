@@ -14,7 +14,7 @@
 @media print{.previewbar,.previewnav,.previewnote,.voice-status{display:none!important}}
 </style></head><body>
 <header class="previewbar"><div><div class="previewbrand">OBRA<span>PRO</span></div><div class="previewsub">Cotizador y control de materiales</div></div><div class="previewtag">OBRAPRO · MATERIALES</div></header>
-<nav class="previewnav"><button id="tabquotes" type="button">📋 Cotizaciones</button><button class="active" id="tabmaterials" type="button">🧱 Lista de materiales</button></nav>
+
 <div class="previewnote">Versión corregida: cliente, ubicación y maestro aparecen una sola vez, sin superposición. Lista de materiales para tu obra.</div>
 
 <div class="actions"><button type="button" id="add">＋ Agregar material</button><button type="button" class="voice" id="voice">🎤 Dictar material</button><button id="print" type="button">🖨 Guardar como PDF / Imprimir</button><button type="button" id="save" class="secondary">⬇ Guardar lista</button><label class="file">↥ Abrir lista guardada<input id="load" type="file" accept=".json,application/json"></label><button type="button" id="clear" class="secondary">Nueva lista</button><span id="count"></span></div>
@@ -38,7 +38,7 @@ fieldIds.forEach(id=>document.getElementById(id).addEventListener('input',persis
  let recog=null;
  if(!SR){voice.title='El reconocimiento de voz no está disponible en este navegador';}
  const say=(t)=>{status.textContent=t};
- document.getElementById('tabquotes').onclick=()=>window.location.href='index.html#cotizacion';
+ 
  voice.onclick=()=>{
   if(!SR){say('Dictado no compatible. Prueba Google Chrome con permisos de micrófono.');return}
   if(recog){recog.stop();return}
